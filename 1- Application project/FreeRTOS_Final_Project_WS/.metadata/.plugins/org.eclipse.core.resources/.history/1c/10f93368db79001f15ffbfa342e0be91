@@ -1,0 +1,14 @@
+/*
+ ============================================================================
+ Name        : lm35.c
+ Module Name : LM35
+ Author      : Ahmed Ali
+ Date        : 22 Sept. 2024
+ Description : Header file for the TM4C123GH6PM Microcontroller ADC driver
+ ============================================================================
+ */
+
+#ifndef HAL_TEMOERATRUE_SENSOR_LM35_H_
+#define HAL_TEMOERATRUE_SENSOR_LM35_H_
+
+#endif /* HAL_TEMOERATRUE_SENSOR_LM35_H_ */

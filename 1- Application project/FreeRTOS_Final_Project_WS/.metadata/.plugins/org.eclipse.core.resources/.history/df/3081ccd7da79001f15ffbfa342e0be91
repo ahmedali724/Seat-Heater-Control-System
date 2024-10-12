@@ -1,0 +1,65 @@
+/*
+ ============================================================================
+ Name        : adc.c
+ Module Name : ADC
+ Author      : Ahmed Ali
+ Date        : 22 Sept. 2024
+ Description : Header file for the TM4C123GH6PM Microcontroller ADC driver
+ ============================================================================
+ */
+
+#ifndef ADC_H_
+#define ADC_H_
+
+#include "Std_Types.h"
+
+/*******************************************************************************
+ *                                Definitions                                  *
+ *******************************************************************************/
+
+/* The TM4C123GH6PM has a 12-bit ADC, so the maximum value is 4095 */
+#define ADC_MAXIMUM_VALUE     4095
+
+/* The reference voltage is typically 3.3V for the TM4C123GH6PM */
+#define ADC_REF_VOLT_VALUE    3.3
+
+/* PE3 corresponds to AIN0 */
+#define AIN0_CHANNEL          0
+
+/* PE2 corresponds to AIN1 */
+#define AIN1_CHANNEL          1
+
+/* Mask for enabling/disabling sequencer 0 */
+#define SEQ0_MASK             (1 << 0)
+
+/* Mask for configuring trigger event (always sample) */
+#define TRIGGER_MASK          0x0F
+
+/* Input source for PE2/Ain1 (2) */
+#define SOURCE_AIN1           0x02
+
+/* Input source for PE3/Ain0 (3) */
+#define SOURCE_AIN0           0x03
+
+/* Sample control bits for sequencer 0 */
+#define SAMPLE_CTL_MASK       ((1 << 1) | (1 << 2))
+
+/* Dither mode enable */
+#define DITHER_ENABLE         (1 << 6)
+
+/* Mask to clear voltage reference bits */
+#define VOLTAGE_REF_MASK      (1 << 0)
+
+/*******************************************************************************
+ *                      Functions Prototypes                                   *
+ *******************************************************************************/
+
+/*
+ * Description :
+ * Function responsible for initializing the ADC0 driver.
+ * It enables the clock for the ADC0 module and configures the GPIO pins for
+ * analog input, and sets up the ADC0 sequencer.
+ */
+void ADC_Init(void);
+
+#endif /* ADC_H_ */

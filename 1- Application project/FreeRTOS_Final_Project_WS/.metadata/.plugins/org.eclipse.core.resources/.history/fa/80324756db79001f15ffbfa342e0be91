@@ -1,0 +1,15 @@
+/*
+ * Lm35.h
+ *
+ *  Created on: 23 Sep. 2024
+ *      Author: ahmed
+ */
+
+#ifndef HAL_TEMOERATRUE_SENSOR_LM35_H_
+#define HAL_TEMOERATRUE_SENSOR_LM35_H_
+
+
+
+
+
+#endif /* HAL_TEMOERATRUE_SENSOR_LM35_H_ */

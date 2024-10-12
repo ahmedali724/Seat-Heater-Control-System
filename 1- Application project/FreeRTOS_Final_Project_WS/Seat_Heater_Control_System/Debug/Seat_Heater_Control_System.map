@@ -1,0 +1,812 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.7                     
+******************************************************************************
+>> Linked Fri Sep 27 15:44:20 2024
+
+OUTPUT FILE NAME:   <Seat_Heater_Control_System.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00006d39
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00006f98  00039068  R  X
+  SRAM                  20000000   00008000  00002451  00005baf  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00006f98   00006f98    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00006b9c   00006b9c    r-x .text
+  00006e08    00006e08    00000158   00000158    r-- .const
+  00006f60    00006f60    00000038   00000038    r-- .cinit
+20000000    20000000    00002451   00000000    rw-
+  20000000    20000000    000021e8   00000000    rw- .bss
+  200021e8    200021e8    00000200   00000000    rw- .stack
+  200023e8    200023e8    00000069   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00006b9c     
+                  0000026c    00001cf0     tasks.obj (.text)
+                  00001f5c    0000100e     queue.obj (.text)
+                  00002f6a    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+                  00002f6c    00000f68     main.obj (.text)
+                  00003ed4    00000b14     Port.obj (.text)
+                  000049e8    000007bc     timers.obj (.text)
+                  000051a4    000004fe     event_groups.obj (.text)
+                  000056a2    00000002     --HOLE-- [fill = 0]
+                  000056a4    00000480     Dio.obj (.text)
+                  00005b24    000002b0     port.obj (.text)
+                  00005dd4    00000270     NVIC.obj (.text)
+                  00006044    0000015c     adc.obj (.text)
+                  000061a0    00000150     uart0.obj (.text)
+                  000062f0    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.asm.obj (.text)
+                  00006426    0000012a     list.obj (.text)
+                  00006550    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.asm.obj (.text)
+                  0000664c    000000e4     Led.obj (.text)
+                  00006730    000000da     portasm.obj (.text)
+                  0000680a    00000002     --HOLE-- [fill = 0]
+                  0000680c    000000d0     heap_1.obj (.text)
+                  000068dc    000000ac     Button.obj (.text)
+                  00006988    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00006a24    00000096                                   : ull_div_t2.asm.obj (.text)
+                  00006aba    0000007a                                   : memset_t2.asm.obj (.text)
+                  00006b34    0000006e                                   : ll_div_t2.asm.obj (.text)
+                  00006ba2    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00006c0a    00000002     --HOLE-- [fill = 0]
+                  00006c0c    00000054     GPTM.obj (.text)
+                  00006c60    0000004c     lm35.obj (.text)
+                  00006cac    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.asm.obj (.text)
+                  00006cf4    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00006d38    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00006d6c    00000020     Mcu.obj (.text)
+                  00006d8c    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : u_tofd_t2.asm.obj (.text)
+                  00006dac    00000018                                   : ll_mul_t2.asm.obj (.text)
+                  00006dc4    00000016     Det.obj (.text)
+                  00006dda    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00006de8    0000000c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  00006df4    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00006e00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00006e04    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00006e08    00000158     
+                  00006e08    00000138     Port_PBcfg.obj (.const:Port_Configuration)
+                  00006f40    00000012     Dio_PBcfg.obj (.const:Dio_Configuration)
+                  00006f52    00000002     --HOLE-- [fill = 0]
+                  00006f54    00000008     port.obj (.const)
+                  00006f5c    00000004     tasks.obj (.const)
+
+.cinit     0    00006f60    00000038     
+                  00006f60    00000014     (.cinit..data.load) [load image, compression = lzss]
+                  00006f74    0000000c     (__TI_handler_table)
+                  00006f80    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00006f88    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000000    000021e8     UNINITIALIZED
+                  20000000    00002000     heap_1.obj (.bss:ucHeap)
+                  20002000    00000064     tasks.obj (.bss:pxReadyTasksLists)
+                  20002064    0000002c     (.common:ullTasksInTime)
+                  20002090    0000002c     (.common:ullTasksOutTime)
+                  200020bc    0000002c     (.common:ullTasksTotalTime)
+                  200020e8    00000028     (.common:xDiagnosticArray)
+                  20002110    00000014     timers.obj (.bss:xActiveTimerList1)
+                  20002124    00000014     timers.obj (.bss:xActiveTimerList2)
+                  20002138    00000014     tasks.obj (.bss:xDelayedTaskList1)
+                  2000214c    00000014     tasks.obj (.bss:xDelayedTaskList2)
+                  20002160    00000014     tasks.obj (.bss:xPendingReadyList)
+                  20002174    00000008     tasks.obj (.bss)
+                  2000217c    00000008     timers.obj (.bss)
+                  20002184    00000004     (.common:xDisplayScreenHandle)
+                  20002188    00000004     (.common:xDisplayScreenMutex)
+                  2000218c    00000004     (.common:xDriverButtonsEventGroup)
+                  20002190    00000004     (.common:xDriverButtonsProcessHandle)
+                  20002194    00000004     (.common:xDriverDesiredTempMutex)
+                  20002198    00000004     (.common:xDriverDiagnosticHandle)
+                  2000219c    00000004     (.common:xDriverDiagnosticQueue)
+                  200021a0    00000004     (.common:xDriverErrorReportSemaphore)
+                  200021a4    00000004     (.common:xDriverHeaterProcessHandle)
+                  200021a8    00000004     (.common:xDriverHeaterStateMutex)
+                  200021ac    00000004     (.common:xDriverHeatingLevelMutex)
+                  200021b0    00000004     (.common:xDriverSensorsProcessHandle)
+                  200021b4    00000004     (.common:xDriverTempValueMutex)
+                  200021b8    00000004     (.common:xPassengerButtonEventGroup)
+                  200021bc    00000004     (.common:xPassengerButtonProcessHandle)
+                  200021c0    00000004     (.common:xPassengerDesiredTempMutex)
+                  200021c4    00000004     (.common:xPassengerDiagnosticHandle)
+                  200021c8    00000004     (.common:xPassengerDiagnosticQueue)
+                  200021cc    00000004     (.common:xPassengerErrorReportSemaphore)
+                  200021d0    00000004     (.common:xPassengerHeaterProcessHandle)
+                  200021d4    00000004     (.common:xPassengerHeaterStateMutex)
+                  200021d8    00000004     (.common:xPassengerHeatingLevelMutex)
+                  200021dc    00000004     (.common:xPassengerSensorsProcessHandle)
+                  200021e0    00000004     (.common:xPassengerTempValueMutex)
+                  200021e4    00000004     (.common:xRunTimeMeasurementsHandle)
+
+.data      0    200023e8    00000069     UNINITIALIZED
+                  200023e8    00000030     tasks.obj (.data)
+                  20002418    0000000c     port.obj (.data)
+                  20002424    0000000c     timers.obj (.data)
+                  20002430    0000000b     main.obj (.data)
+                  2000243b    00000001     --HOLE--
+                  2000243c    00000008     heap_1.obj (.data)
+                  20002444    00000005     Port.obj (.data)
+                  20002449    00000003     --HOLE--
+                  2000244c    00000005     Dio.obj (.data)
+
+.stack     0    200021e8    00000200     UNINITIALIZED
+                  200021e8    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  200021ec    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code    ro data   rw data
+       ------                         ----    -------   -------
+    .\
+       main.obj                       3944    0         283    
+       tm4c123gh6pm_startup_ccs.obj   12      620       0      
+       Mcu.obj                        32      0         0      
+       Det.obj                        22      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         4010    620       283    
+                                                               
+    .\FreeRTOS\Source\
+       tasks.obj                      7408    4         216    
+       queue.obj                      4110    0         0      
+       timers.obj                     1980    0         60     
+       event_groups.obj               1278    0         0      
+       list.obj                       298     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         15074   4         276    
+                                                               
+    .\FreeRTOS\Source\portable\CCS\ARM_CM4F\
+       port.obj                       688     8         12     
+       portasm.obj                    218     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         906     8         12     
+                                                               
+    .\FreeRTOS\Source\portable\MemMang\
+       heap_1.obj                     208     0         8200   
+    +--+------------------------------+-------+---------+---------+
+       Total:                         208     0         8200   
+                                                               
+    .\HAL\Button\
+       Button.obj                     172     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         172     0         0      
+                                                               
+    .\HAL\Led\
+       Led.obj                        228     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         228     0         0      
+                                                               
+    .\HAL\Temperatrue Sensor\
+       lm35.obj                       76      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         76      0         0      
+                                                               
+    .\MCAL\ADC\
+       adc.obj                        348     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         348     0         0      
+                                                               
+    .\MCAL\Dio\
+       Dio.obj                        1152    0         5      
+       Dio_PBcfg.obj                  0       18        0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         1152    18        5      
+                                                               
+    .\MCAL\GPTM\
+       GPTM.obj                       84      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         84      0         0      
+                                                               
+    .\MCAL\NVIC\
+       NVIC.obj                       624     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         624     0         0      
+                                                               
+    .\MCAL\Port\
+       Port.obj                       2836    0         5      
+       Port_PBcfg.obj                 0       312       0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         2836    312       5      
+                                                               
+    .\MCAL\UART\
+       uart0.obj                      336     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         336     0         0      
+                                                               
+    C:\ti\ccs1271\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       fd_div_t2.asm.obj              310     0         0      
+       fd_mul_t2.asm.obj              252     0         0      
+       memcpy_t2.asm.obj              156     0         0      
+       ull_div_t2.asm.obj             150     0         0      
+       memset_t2.asm.obj              122     0         0      
+       ll_div_t2.asm.obj              110     0         0      
+       copy_decompress_lzss.c.obj     104     0         0      
+       fd_toi_t2.asm.obj              72      0         0      
+       autoinit.c.obj                 68      0         0      
+       boot_cortex_m.c.obj            52      0         0      
+       u_tofd_t2.asm.obj              32      0         0      
+       ll_mul_t2.asm.obj              24      0         0      
+       copy_decompress_none.c.obj     14      0         0      
+       copy_zero_init.c.obj           12      0         0      
+       exit.c.obj                     4       0         0      
+       pre_init.c.obj                 4       0         0      
+       div0.asm.obj                   2       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         1488    0         0      
+                                                               
+       Stack:                         0       0         512    
+       Linker Generated:              0       56        0      
+    +--+------------------------------+-------+---------+---------+
+       Grand Total:                   27542   1018      9293   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00006f88 records: 2, size/record: 8, table size: 16
+	.data: load addr=00006f60, load size=00000014 bytes, run addr=200023e8, run size=00000069 bytes, compression=lzss
+	.bss: load addr=00006f80, load size=00000008 bytes, run addr=20000000, run size=000021e8 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00006f74 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                               
+-------   ----                               
+00006045  ADC_Init                           
+000060df  ADC_ReadChannel                    
+00006e05  C$$EXIT                            
+00002f6d  Delay_MS                           
+00006dc5  Det_ReportError                    
+00006f40  Dio_Configuration                  
+00005a1d  Dio_FlipChannel                    
+000056a5  Dio_Init                           
+000057a9  Dio_ReadChannel                    
+00005875  Dio_ReadChannelGroup               
+000056c9  Dio_WriteChannel                   
+00005939  Dio_WriteChannelGroup              
+00003e21  GPIO_PORTB_Handler                 
+00003d21  GPIO_PORTF_Handler                 
+000068dd  GPIO_SetupButtonsInterrupt         
+00006c0d  GPTM_WTimer0Init                   
+00006c3d  GPTM_WTimer0Read                   
+00006c61  LM35_getTemperature                
+000066f1  Led_BLUE1_SetOff                   
+000066e5  Led_BLUE1_SetOn                    
+000066fd  Led_BLUE1_Toggle                   
+00006717  Led_BLUE2_SetOff                   
+0000670b  Led_BLUE2_SetOn                    
+00006723  Led_BLUE2_Toggle                   
+000066a5  Led_GREEN1_SetOff                  
+00006699  Led_GREEN1_SetOn                   
+000066b1  Led_GREEN1_Toggle                  
+000066cb  Led_GREEN2_SetOff                  
+000066bf  Led_GREEN2_SetOn                   
+000066d7  Led_GREEN2_Toggle                  
+00006659  Led_RED1_SetOff                    
+0000664d  Led_RED1_SetOn                     
+00006665  Led_RED1_Toggle                    
+0000667f  Led_RED2_SetOff                    
+00006673  Led_RED2_SetOn                     
+0000668b  Led_RED2_Toggle                    
+00006d6d  Mcu_Init                           
+00005f0b  NVIC_DisableException              
+00005e17  NVIC_DisableIRQ                    
+00005ec5  NVIC_EnableException               
+00005dd5  NVIC_EnableIRQ                     
+00005f51  NVIC_SetPriorityException          
+00005e59  NVIC_SetPriorityIRQ                
+00006e08  Port_Configuration                 
+000046e1  Port_GetVersionInfo                
+00003ed5  Port_Init                          
+00004585  Port_RefreshPortDirection          
+0000433b  Port_SetPinDirection               
+00004719  Port_SetPinMode                    
+00006df5  ResetISR                           
+000061a1  UART0_Init                         
+000061f7  UART0_ReceiveByte                  
+000061db  UART0_SendByte                     
+0000622d  UART0_SendInteger                  
+00006207  UART0_SendString                   
+200023e8  __STACK_END                        
+00000200  __STACK_SIZE                       
+200023e8  __STACK_TOP                        
+00006f88  __TI_CINIT_Base                    
+00006f98  __TI_CINIT_Limit                   
+00006f74  __TI_Handler_Table_Base            
+00006f80  __TI_Handler_Table_Limit           
+00006cf5  __TI_auto_init_nobinit_nopinit     
+00006ba3  __TI_decompress_lzss               
+00006ddb  __TI_decompress_none               
+ffffffff  __TI_pprof_out_hndl                
+ffffffff  __TI_prof_data_size                
+ffffffff  __TI_prof_data_start               
+00000000  __TI_static_base__                 
+00006de9  __TI_zero_init                     
+00006cad  __aeabi_d2iz                       
+000062f1  __aeabi_ddiv                       
+00006551  __aeabi_dmul                       
+00002f6b  __aeabi_idiv0                      
+00002f6b  __aeabi_ldiv0                      
+00006b35  __aeabi_ldivmod                    
+00006dad  __aeabi_lmul                       
+00006abb  __aeabi_memclr                     
+00006abb  __aeabi_memclr4                    
+00006abb  __aeabi_memclr8                    
+00006989  __aeabi_memcpy                     
+00006989  __aeabi_memcpy4                    
+00006989  __aeabi_memcpy8                    
+00006abd  __aeabi_memset                     
+00006abd  __aeabi_memset4                    
+00006abd  __aeabi_memset8                    
+00006d8d  __aeabi_ui2d                       
+00006a25  __aeabi_uldivmod                   
+ffffffff  __binit__                          
+ffffffff  __c_args__                         
+UNDEFED   __mpu_init                         
+200021e8  __stack                            
+20000000  __start___llvm_prf_cnts            
+20000000  __stop___llvm_prf_cnts             
+00006d39  _c_int00_noargs                    
+UNDEFED   _system_post_cinit                 
+00006e01  _system_pre_init                   
+00006e05  abort                              
+ffffffff  binit                              
+00000000  g_pfnVectors                       
+00002fad  main                               
+00006989  memcpy                             
+00006ac3  memset                             
+000008a9  pcTaskGetName                      
+00004c4d  pcTimerGetName                     
+0000680d  pvPortMalloc                       
+00001665  pvTaskIncrementMutexHeldCount      
+000050b1  pvTimerGetTimerID                  
+200023e8  pxCurrentTCB                       
+00005b25  pxPortInitialiseStack              
+2000243a  ucDiagnosticIndex                  
+20002432  ucDriverDesiredTemperature         
+20002438  ucDriverErrorFlag                  
+20002436  ucDriverHeaterState                
+20002430  ucDriverHeatingLevel               
+20002434  ucDriverTemperatureValue           
+20002433  ucPassengerDesiredTemperature      
+20002439  ucPassengerErrorFlag               
+20002437  ucPassengerHeaterState             
+20002431  ucPassengerHeatingLevel            
+20002435  ucPassengerTemperatureValue        
+00006f54  ulMaxSyscallInterruptPriority      
+00006741  ulPortGetIPSR                      
+0000167d  ulTaskGenericNotifyTake            
+00001e75  ulTaskGenericNotifyValueClear      
+20002064  ullTasksInTime                     
+20002090  ullTasksOutTime                    
+200020bc  ullTasksTotalTime                  
+00006509  uxListRemove                       
+00002be5  uxQueueMessagesWaiting             
+00002c43  uxQueueMessagesWaitingFromISR      
+00002c0f  uxQueueSpacesAvailable             
+00000891  uxTaskGetNumberOfTasks             
+0000163f  uxTaskResetEventItemValue          
+00004c13  uxTimerGetReloadMode               
+00006f5c  uxTopUsedPriority                  
+000039d1  vDisplayScreenTask                 
+00003471  vDriverButtonsProcessTask          
+00003881  vDriverDiagnosticTask              
+00003595  vDriverHeaterProcessTask           
+000031d5  vDriverSensorProcessTask           
+0000565d  vEventGroupClearBitsCallback       
+000055e3  vEventGroupDelete                  
+0000564d  vEventGroupSetBitsCallback         
+00006427  vListInitialise                    
+00006457  vListInitialiseItem                
+000064a3  vListInsert                        
+00006467  vListInsertEnd                     
+00003505  vPassengerButtonProcessTask        
+00003911  vPassengerDiagnosticTask           
+00003709  vPassengerHeatersProcessTask       
+000033a9  vPassengerSensorsProcessTask       
+000067fd  vPortEnableVFP                     
+00005c69  vPortEndScheduler                  
+00005c8d  vPortEnterCritical                 
+00005ccf  vPortExitCritical                  
+00006899  vPortFree                          
+000068bd  vPortInitialiseBlocks              
+000067b9  vPortSVCHandler                    
+00005d21  vPortSetupTimerInterrupt           
+000067d9  vPortStartFirstTask                
+00005d3d  vPortValidateInterruptPriority     
+00002c6d  vQueueDelete                       
+00002f0f  vQueueWaitForMessageRestricted     
+00003bf9  vRunTimeMeasurementsTask           
+00000599  vTaskDelay                         
+00000685  vTaskEndScheduler                  
+00001c5d  vTaskGenericNotifyGiveFromISR      
+000010fd  vTaskInternalSetTimeOutState       
+000011c1  vTaskMissedYield                   
+00000cc7  vTaskPlaceOnEventList              
+00000da5  vTaskPlaceOnEventListRestricted    
+00000d05  vTaskPlaceOnUnorderedEventList     
+000014f9  vTaskPriorityDisinheritAfterTimeout
+00000f91  vTaskRemoveFromUnorderedEventList  
+00000b29  vTaskSetApplicationTaskTag         
+000010cb  vTaskSetTimeOutState               
+000005eb  vTaskStartScheduler                
+000006a1  vTaskSuspendAll                    
+00000bfd  vTaskSwitchContext                 
+00004b8d  vTimerSetReloadMode                
+000050df  vTimerSetTimerID                   
+200020e8  xDiagnosticArray                   
+20002184  xDisplayScreenHandle               
+20002188  xDisplayScreenMutex                
+2000218c  xDriverButtonsEventGroup           
+20002190  xDriverButtonsProcessHandle        
+20002194  xDriverDesiredTempMutex            
+20002198  xDriverDiagnosticHandle            
+2000219c  xDriverDiagnosticQueue             
+200021a0  xDriverErrorReportSemaphore        
+200021a4  xDriverHeaterProcessHandle         
+200021a8  xDriverHeaterStateMutex            
+200021ac  xDriverHeatingLevelMutex           
+200021b0  xDriverSensorsProcessHandle        
+200021b4  xDriverTempValueMutex              
+00005457  xEventGroupClearBits               
+000051a5  xEventGroupCreate                  
+000054b5  xEventGroupGetBitsFromISR          
+000054e9  xEventGroupSetBits                 
+000051c5  xEventGroupSync                    
+000052f7  xEventGroupWaitBits                
+200021b8  xPassengerButtonEventGroup         
+200021bc  xPassengerButtonProcessHandle      
+200021c0  xPassengerDesiredTempMutex         
+200021c4  xPassengerDiagnosticHandle         
+200021c8  xPassengerDiagnosticQueue          
+200021cc  xPassengerErrorReportSemaphore     
+200021d0  xPassengerHeaterProcessHandle      
+200021d4  xPassengerHeaterStateMutex         
+200021d8  xPassengerHeatingLevelMutex        
+200021dc  xPassengerSensorsProcessHandle     
+200021e0  xPassengerTempValueMutex           
+000068c5  xPortGetFreeHeapSize               
+00006759  xPortPendSVHandler                 
+00005bb1  xPortStartScheduler                
+00005cfb  xPortSysTickHandler                
+00002143  xQueueCreateMutex                  
+0000205d  xQueueGenericCreate                
+00001f5d  xQueueGenericReset                 
+0000216f  xQueueGenericSend                  
+00002329  xQueueGenericSendFromISR           
+00002461  xQueueGiveFromISR                  
+00002e7b  xQueueIsQueueEmptyFromISR          
+00002ed5  xQueueIsQueueFullFromISR           
+000028b1  xQueuePeek                         
+00002b35  xQueuePeekFromISR                  
+00002585  xQueueReceive                      
+00002a2f  xQueueReceiveFromISR               
+000026fd  xQueueSemaphoreTake                
+200021e4  xRunTimeMeasurementsHandle         
+00000bb3  xTaskCallApplicationTaskHook       
+000008e1  xTaskCatchUpTicks                  
+00001125  xTaskCheckForTimeOut               
+0000026d  xTaskCreate                        
+000004bf  xTaskDelayUntil                    
+00001821  xTaskGenericNotify                 
+00001a07  xTaskGenericNotifyFromISR          
+00001e0d  xTaskGenericNotifyStateClear       
+00001739  xTaskGenericNotifyWait             
+00000b4f  xTaskGetApplicationTaskTag         
+00000b79  xTaskGetApplicationTaskTagFromISR  
+00001271  xTaskGetCurrentTaskHandle          
+00001281  xTaskGetSchedulerState             
+0000086d  xTaskGetTickCount                  
+0000087d  xTaskGetTickCountFromISR           
+0000094d  xTaskIncrementTick                 
+000013d1  xTaskPriorityDisinherit            
+000012b1  xTaskPriorityInherit               
+00000e25  xTaskRemoveFromEventList           
+000006c9  xTaskResumeAll                     
+00004a27  xTimerCreate                       
+000049e9  xTimerCreateTimerTask              
+00004ac5  xTimerGenericCommand               
+00004c1f  xTimerGetExpiryTime                
+00004b67  xTimerGetPeriod                    
+00004bd7  xTimerGetReloadMode                
+00004b45  xTimerGetTimerDaemonTaskHandle     
+00005075  xTimerIsTimerActive                
+00005143  xTimerPendFunctionCall             
+0000510d  xTimerPendFunctionCallFromISR      
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                               
+-------   ----                               
+00000000  __TI_static_base__                 
+00000000  g_pfnVectors                       
+00000200  __STACK_SIZE                       
+0000026d  xTaskCreate                        
+000004bf  xTaskDelayUntil                    
+00000599  vTaskDelay                         
+000005eb  vTaskStartScheduler                
+00000685  vTaskEndScheduler                  
+000006a1  vTaskSuspendAll                    
+000006c9  xTaskResumeAll                     
+0000086d  xTaskGetTickCount                  
+0000087d  xTaskGetTickCountFromISR           
+00000891  uxTaskGetNumberOfTasks             
+000008a9  pcTaskGetName                      
+000008e1  xTaskCatchUpTicks                  
+0000094d  xTaskIncrementTick                 
+00000b29  vTaskSetApplicationTaskTag         
+00000b4f  xTaskGetApplicationTaskTag         
+00000b79  xTaskGetApplicationTaskTagFromISR  
+00000bb3  xTaskCallApplicationTaskHook       
+00000bfd  vTaskSwitchContext                 
+00000cc7  vTaskPlaceOnEventList              
+00000d05  vTaskPlaceOnUnorderedEventList     
+00000da5  vTaskPlaceOnEventListRestricted    
+00000e25  xTaskRemoveFromEventList           
+00000f91  vTaskRemoveFromUnorderedEventList  
+000010cb  vTaskSetTimeOutState               
+000010fd  vTaskInternalSetTimeOutState       
+00001125  xTaskCheckForTimeOut               
+000011c1  vTaskMissedYield                   
+00001271  xTaskGetCurrentTaskHandle          
+00001281  xTaskGetSchedulerState             
+000012b1  xTaskPriorityInherit               
+000013d1  xTaskPriorityDisinherit            
+000014f9  vTaskPriorityDisinheritAfterTimeout
+0000163f  uxTaskResetEventItemValue          
+00001665  pvTaskIncrementMutexHeldCount      
+0000167d  ulTaskGenericNotifyTake            
+00001739  xTaskGenericNotifyWait             
+00001821  xTaskGenericNotify                 
+00001a07  xTaskGenericNotifyFromISR          
+00001c5d  vTaskGenericNotifyGiveFromISR      
+00001e0d  xTaskGenericNotifyStateClear       
+00001e75  ulTaskGenericNotifyValueClear      
+00001f5d  xQueueGenericReset                 
+0000205d  xQueueGenericCreate                
+00002143  xQueueCreateMutex                  
+0000216f  xQueueGenericSend                  
+00002329  xQueueGenericSendFromISR           
+00002461  xQueueGiveFromISR                  
+00002585  xQueueReceive                      
+000026fd  xQueueSemaphoreTake                
+000028b1  xQueuePeek                         
+00002a2f  xQueueReceiveFromISR               
+00002b35  xQueuePeekFromISR                  
+00002be5  uxQueueMessagesWaiting             
+00002c0f  uxQueueSpacesAvailable             
+00002c43  uxQueueMessagesWaitingFromISR      
+00002c6d  vQueueDelete                       
+00002e7b  xQueueIsQueueEmptyFromISR          
+00002ed5  xQueueIsQueueFullFromISR           
+00002f0f  vQueueWaitForMessageRestricted     
+00002f6b  __aeabi_idiv0                      
+00002f6b  __aeabi_ldiv0                      
+00002f6d  Delay_MS                           
+00002fad  main                               
+000031d5  vDriverSensorProcessTask           
+000033a9  vPassengerSensorsProcessTask       
+00003471  vDriverButtonsProcessTask          
+00003505  vPassengerButtonProcessTask        
+00003595  vDriverHeaterProcessTask           
+00003709  vPassengerHeatersProcessTask       
+00003881  vDriverDiagnosticTask              
+00003911  vPassengerDiagnosticTask           
+000039d1  vDisplayScreenTask                 
+00003bf9  vRunTimeMeasurementsTask           
+00003d21  GPIO_PORTF_Handler                 
+00003e21  GPIO_PORTB_Handler                 
+00003ed5  Port_Init                          
+0000433b  Port_SetPinDirection               
+00004585  Port_RefreshPortDirection          
+000046e1  Port_GetVersionInfo                
+00004719  Port_SetPinMode                    
+000049e9  xTimerCreateTimerTask              
+00004a27  xTimerCreate                       
+00004ac5  xTimerGenericCommand               
+00004b45  xTimerGetTimerDaemonTaskHandle     
+00004b67  xTimerGetPeriod                    
+00004b8d  vTimerSetReloadMode                
+00004bd7  xTimerGetReloadMode                
+00004c13  uxTimerGetReloadMode               
+00004c1f  xTimerGetExpiryTime                
+00004c4d  pcTimerGetName                     
+00005075  xTimerIsTimerActive                
+000050b1  pvTimerGetTimerID                  
+000050df  vTimerSetTimerID                   
+0000510d  xTimerPendFunctionCallFromISR      
+00005143  xTimerPendFunctionCall             
+000051a5  xEventGroupCreate                  
+000051c5  xEventGroupSync                    
+000052f7  xEventGroupWaitBits                
+00005457  xEventGroupClearBits               
+000054b5  xEventGroupGetBitsFromISR          
+000054e9  xEventGroupSetBits                 
+000055e3  vEventGroupDelete                  
+0000564d  vEventGroupSetBitsCallback         
+0000565d  vEventGroupClearBitsCallback       
+000056a5  Dio_Init                           
+000056c9  Dio_WriteChannel                   
+000057a9  Dio_ReadChannel                    
+00005875  Dio_ReadChannelGroup               
+00005939  Dio_WriteChannelGroup              
+00005a1d  Dio_FlipChannel                    
+00005b25  pxPortInitialiseStack              
+00005bb1  xPortStartScheduler                
+00005c69  vPortEndScheduler                  
+00005c8d  vPortEnterCritical                 
+00005ccf  vPortExitCritical                  
+00005cfb  xPortSysTickHandler                
+00005d21  vPortSetupTimerInterrupt           
+00005d3d  vPortValidateInterruptPriority     
+00005dd5  NVIC_EnableIRQ                     
+00005e17  NVIC_DisableIRQ                    
+00005e59  NVIC_SetPriorityIRQ                
+00005ec5  NVIC_EnableException               
+00005f0b  NVIC_DisableException              
+00005f51  NVIC_SetPriorityException          
+00006045  ADC_Init                           
+000060df  ADC_ReadChannel                    
+000061a1  UART0_Init                         
+000061db  UART0_SendByte                     
+000061f7  UART0_ReceiveByte                  
+00006207  UART0_SendString                   
+0000622d  UART0_SendInteger                  
+000062f1  __aeabi_ddiv                       
+00006427  vListInitialise                    
+00006457  vListInitialiseItem                
+00006467  vListInsertEnd                     
+000064a3  vListInsert                        
+00006509  uxListRemove                       
+00006551  __aeabi_dmul                       
+0000664d  Led_RED1_SetOn                     
+00006659  Led_RED1_SetOff                    
+00006665  Led_RED1_Toggle                    
+00006673  Led_RED2_SetOn                     
+0000667f  Led_RED2_SetOff                    
+0000668b  Led_RED2_Toggle                    
+00006699  Led_GREEN1_SetOn                   
+000066a5  Led_GREEN1_SetOff                  
+000066b1  Led_GREEN1_Toggle                  
+000066bf  Led_GREEN2_SetOn                   
+000066cb  Led_GREEN2_SetOff                  
+000066d7  Led_GREEN2_Toggle                  
+000066e5  Led_BLUE1_SetOn                    
+000066f1  Led_BLUE1_SetOff                   
+000066fd  Led_BLUE1_Toggle                   
+0000670b  Led_BLUE2_SetOn                    
+00006717  Led_BLUE2_SetOff                   
+00006723  Led_BLUE2_Toggle                   
+00006741  ulPortGetIPSR                      
+00006759  xPortPendSVHandler                 
+000067b9  vPortSVCHandler                    
+000067d9  vPortStartFirstTask                
+000067fd  vPortEnableVFP                     
+0000680d  pvPortMalloc                       
+00006899  vPortFree                          
+000068bd  vPortInitialiseBlocks              
+000068c5  xPortGetFreeHeapSize               
+000068dd  GPIO_SetupButtonsInterrupt         
+00006989  __aeabi_memcpy                     
+00006989  __aeabi_memcpy4                    
+00006989  __aeabi_memcpy8                    
+00006989  memcpy                             
+00006a25  __aeabi_uldivmod                   
+00006abb  __aeabi_memclr                     
+00006abb  __aeabi_memclr4                    
+00006abb  __aeabi_memclr8                    
+00006abd  __aeabi_memset                     
+00006abd  __aeabi_memset4                    
+00006abd  __aeabi_memset8                    
+00006ac3  memset                             
+00006b35  __aeabi_ldivmod                    
+00006ba3  __TI_decompress_lzss               
+00006c0d  GPTM_WTimer0Init                   
+00006c3d  GPTM_WTimer0Read                   
+00006c61  LM35_getTemperature                
+00006cad  __aeabi_d2iz                       
+00006cf5  __TI_auto_init_nobinit_nopinit     
+00006d39  _c_int00_noargs                    
+00006d6d  Mcu_Init                           
+00006d8d  __aeabi_ui2d                       
+00006dad  __aeabi_lmul                       
+00006dc5  Det_ReportError                    
+00006ddb  __TI_decompress_none               
+00006de9  __TI_zero_init                     
+00006df5  ResetISR                           
+00006e01  _system_pre_init                   
+00006e05  C$$EXIT                            
+00006e05  abort                              
+00006e08  Port_Configuration                 
+00006f40  Dio_Configuration                  
+00006f54  ulMaxSyscallInterruptPriority      
+00006f5c  uxTopUsedPriority                  
+00006f74  __TI_Handler_Table_Base            
+00006f80  __TI_Handler_Table_Limit           
+00006f88  __TI_CINIT_Base                    
+00006f98  __TI_CINIT_Limit                   
+20000000  __start___llvm_prf_cnts            
+20000000  __stop___llvm_prf_cnts             
+20002064  ullTasksInTime                     
+20002090  ullTasksOutTime                    
+200020bc  ullTasksTotalTime                  
+200020e8  xDiagnosticArray                   
+20002184  xDisplayScreenHandle               
+20002188  xDisplayScreenMutex                
+2000218c  xDriverButtonsEventGroup           
+20002190  xDriverButtonsProcessHandle        
+20002194  xDriverDesiredTempMutex            
+20002198  xDriverDiagnosticHandle            
+2000219c  xDriverDiagnosticQueue             
+200021a0  xDriverErrorReportSemaphore        
+200021a4  xDriverHeaterProcessHandle         
+200021a8  xDriverHeaterStateMutex            
+200021ac  xDriverHeatingLevelMutex           
+200021b0  xDriverSensorsProcessHandle        
+200021b4  xDriverTempValueMutex              
+200021b8  xPassengerButtonEventGroup         
+200021bc  xPassengerButtonProcessHandle      
+200021c0  xPassengerDesiredTempMutex         
+200021c4  xPassengerDiagnosticHandle         
+200021c8  xPassengerDiagnosticQueue          
+200021cc  xPassengerErrorReportSemaphore     
+200021d0  xPassengerHeaterProcessHandle      
+200021d4  xPassengerHeaterStateMutex         
+200021d8  xPassengerHeatingLevelMutex        
+200021dc  xPassengerSensorsProcessHandle     
+200021e0  xPassengerTempValueMutex           
+200021e4  xRunTimeMeasurementsHandle         
+200021e8  __stack                            
+200023e8  __STACK_END                        
+200023e8  __STACK_TOP                        
+200023e8  pxCurrentTCB                       
+20002430  ucDriverHeatingLevel               
+20002431  ucPassengerHeatingLevel            
+20002432  ucDriverDesiredTemperature         
+20002433  ucPassengerDesiredTemperature      
+20002434  ucDriverTemperatureValue           
+20002435  ucPassengerTemperatureValue        
+20002436  ucDriverHeaterState                
+20002437  ucPassengerHeaterState             
+20002438  ucDriverErrorFlag                  
+20002439  ucPassengerErrorFlag               
+2000243a  ucDiagnosticIndex                  
+ffffffff  __TI_pprof_out_hndl                
+ffffffff  __TI_prof_data_size                
+ffffffff  __TI_prof_data_start               
+ffffffff  __binit__                          
+ffffffff  __c_args__                         
+ffffffff  binit                              
+UNDEFED   __mpu_init                         
+UNDEFED   _system_post_cinit                 
+
+[261 symbols]

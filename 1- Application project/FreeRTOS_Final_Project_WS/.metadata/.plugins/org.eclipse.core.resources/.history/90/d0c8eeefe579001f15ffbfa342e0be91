@@ -1,0 +1,32 @@
+/*
+ ============================================================================
+ Name        : Button.h
+ Module Name : Button
+ Author      : Ahmed Ali
+ Date        : 22 Sept. 2024
+ Description : Header file for Button Module
+ ============================================================================
+ */
+
+#ifndef BUTTON_H_
+#define BUTTON_H_
+
+#include "Std_Types.h"
+
+/*******************************************************************************
+ *                                Definitions                                  *
+ *******************************************************************************/
+
+// Define masks and constants
+#define PF0     0x01
+#define PF4     0x10
+#define PB0     0x01
+
+// Define NVIC interrupt numbers and priorities
+#define NVIC_EN0_PORTF   (1 << 30)  // IRQ30 for Port F
+#define NVIC_EN0_PORTB   (1 << 1)   // IRQ1 for Port B
+
+#define PRIORITY_2       (2 << 21)  // Priority 2 (shift for PRI7)
+#define PRIORITY_3       (3 << 5)   // Priority 3 (shift for PRI0)
+
+#endif /* BUTTON_H_ */

@@ -1,0 +1,14 @@
+/*
+ ============================================================================
+ Name        : Led_Cfg.h
+ Module Name : Led
+ Author      : Ahmed Ali
+ Date        : 22 Sept. 2024
+ Description : Header file for Led Module
+ ============================================================================
+ */
+
+#ifndef LED_CFG_H_
+#define LED_CFG_H_
+
+#endif /* LED_CFG_H_ */

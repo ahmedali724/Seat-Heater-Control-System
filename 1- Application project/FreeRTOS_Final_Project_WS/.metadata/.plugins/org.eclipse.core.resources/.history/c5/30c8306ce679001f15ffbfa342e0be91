@@ -1,0 +1,34 @@
+/*
+ ============================================================================
+ Name        : Button.c
+ Module Name : Button
+ Author      : Ahmed Ali
+ Date        : 22 Sept. 2024
+ Description : Source file for Button Module
+ ============================================================================
+ */
+
+#include "Button.h"
+#include "tm4c123gh6pm_registers.h"
+
+/* GPIO configuration and interrupt initialization for Port F (PF0, PF4) and Port B (PB0) */
+void GPIO_SetupButtonsInterrupt(void)
+{
+    // Enable falling edge trigger for PF0 and PF4
+    GPIO_PORTF_IS_R &= ~(PF0 | PF4);   // Edge-sensitive
+    GPIO_PORTF_IBE_R &= ~(PF0 | PF4);  // Not both edges
+    GPIO_PORTF_IEV_R &= ~(PF0 | PF4);  // Falling edge
+    GPIO_PORTF_ICR_R |= (PF0 | PF4);   // Clear any prior interrupts
+    GPIO_PORTF_IM_R |= (PF0 | PF4);    // Unmask PF0 and PF4 interrupts
+
+    // Enable falling edge trigger for PB0
+    GPIO_PORTB_IS_R &= ~PB0;    // Edge-sensitive
+    GPIO_PORTB_IBE_R &= ~PB0;   // Not both edges
+    GPIO_PORTB_IEV_R &= ~PB0;   // Falling edge
+    GPIO_PORTB_ICR_R |= PB0;    // Clear any prior interrupt
+    GPIO_PORTB_IM_R |= PB0;     // Unmask PB0 interrupt
+
+    /* Enable NVIC GPIO PORTF IRQ and set its priority */
+    NVIC_EnableIRQ(GPIO_PORTF_IRQ_NUM);
+    NVIC_SetPriorityIRQ(GPIO_PORTF_IRQ_NUM, GPIO_PORTF_INTERRUPT_PRIORITY);
+}

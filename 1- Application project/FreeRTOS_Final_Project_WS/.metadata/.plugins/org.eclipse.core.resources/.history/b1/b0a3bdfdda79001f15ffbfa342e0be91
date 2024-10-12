@@ -1,0 +1,9 @@
+/*
+ ============================================================================
+ Name        : adc.c
+ Module Name : ADC
+ Author      : Ahmed Ali
+ Date        : 22 Sept. 2024
+ Description : Source file for the TM4C123GH6PM Microcontroller ADC driver
+ ============================================================================
+ */

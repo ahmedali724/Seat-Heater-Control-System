@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project Seat_Heater_Control_System ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'Seat_Heater_Control_System.out' is up to date.
+
+**** Build Finished ****

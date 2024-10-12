@@ -1,0 +1,28 @@
+/*
+ ============================================================================
+ Name        : Button.h
+ Module Name : Button
+ Author      : Ahmed Ali
+ Date        : 22 Sept. 2024
+ Description : Header file for Button Module
+ ============================================================================
+ */
+
+#ifndef BUTTON_H_
+#define BUTTON_H_
+
+#include "Std_Types.h"
+
+/*******************************************************************************
+ *                                Definitions                                  *
+ *******************************************************************************/
+
+/* Define masks and constants */
+#define PF0     0x01
+#define PF4     0x10
+#define PB0     0x01
+
+#define GPIO_PORTF_IRQ_NUM                30
+#define GPIO_PORTF_INTERRUPT_PRIORITY     2
+
+#endif /* BUTTON_H_ */

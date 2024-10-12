@@ -1,0 +1,15 @@
+/*
+ * Led_Cfg.h
+ *
+ *  Created on: 23 Sep. 2024
+ *      Author: ahmed
+ */
+
+#ifndef HAL_LED_LED_CFG_H_
+#define HAL_LED_LED_CFG_H_
+
+
+
+
+
+#endif /* HAL_LED_LED_CFG_H_ */

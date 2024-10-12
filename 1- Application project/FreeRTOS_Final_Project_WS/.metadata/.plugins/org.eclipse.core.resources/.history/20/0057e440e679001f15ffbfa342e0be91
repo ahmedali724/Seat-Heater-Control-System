@@ -1,0 +1,18 @@
+/*
+ ============================================================================
+ Name        : Button.c
+ Module Name : Button
+ Author      : Ahmed Ali
+ Date        : 22 Sept. 2024
+ Description : Source file for Button Module
+ ============================================================================
+ */
+
+#include "Button.h"
+#include "tm4c123gh6pm_registers.h"
+
+/* GPIO configuration and interrupt initialization for Port F (PF0, PF4) and Port B (PB0) */
+void GPIO_SetupButtonsInterrupt(void)
+{
+
+}

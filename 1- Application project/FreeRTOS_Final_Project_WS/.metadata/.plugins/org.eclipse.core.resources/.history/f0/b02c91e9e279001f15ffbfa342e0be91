@@ -1,0 +1,14 @@
+/*
+ ============================================================================
+ Name        : adc.h
+ Module Name : ADC
+ Author      : Ahmed Ali
+ Date        : 22 Sept. 2024
+ Description : Header file for the TM4C123GH6PM Microcontroller ADC driver
+ ============================================================================
+ */
+
+#ifndef HAL_LED_LED_H_
+#define HAL_LED_LED_H_
+
+#endif /* HAL_LED_LED_H_ */
